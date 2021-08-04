@@ -1,0 +1,59 @@
+## influxDB ##
+# 1. influxDB install
+wget https://dl.influxdata.com/influxdb/releases/influxdb_1.7.8_amd64.deb
+dpkg -i influxdb_1.7.8_amd64.deb
+
+systemctl enable --now influxdb
+systemctl status influxdb
+
+# 2. influxDB 설정
+# /etc/influxdb/influxdb.conf 파일 수정
+[http]
+  # Determines whether HTTP endpoint is enabled.
+  enabled = true
+
+  # The bind address used by the HTTP service.
+  bind-address = ":8086"
+
+  # Determines whether user authentication is enabled over HTTP/HTTPS.
+  auth-enabled = false
+  
+# 3. influxdb에 database 추가 후 데이터 검색
+influx -precision rfc3339
+Connected to http://localhost:8086 version 1.4.2
+InfluxDB shell version: 1.4.2
+> create database sensordata
+> show databases
+name: databases
+name
+----
+_internal
+sensordata
+
+> use sensordata
+Using database sensordata
+
+> show measurements
+name: measurements
+name
+----
+test
+test2
+
+> select * from test
+name: test2
+time                temperature
+----                -----------
+1628055062496345088 37.3862186162849
+1628055072506521088 37.3862186162849
+1628055082518673920 37.3862186162849
+1628055139501588224 35.78730148257765
+1628055149510608896 38.38648617664692
+1628055159522205952 39.01301162669766
+1628055169531846912 35.691422359265125
+1628055179544357120 36.276561524052056
+1628055189558912000 38.60960948271432
+1628055199568412928 39.23051955526679
+1628055209581067008 37.20683309662875
+1628055219592662016 38.82957497180578
+...
