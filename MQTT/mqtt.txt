@@ -1,0 +1,26 @@
+## MQTT ##
+1. MQTT install
+# subscriber
+vagrant@sub:~$ sudo apt install -y python-pip
+vagrant@sub:~$ pip install paho-mqtt
+vagrant@sub:~$ sudo apt install -y mosquitto
+vagrant@sub:~$ sudo apt install -y mosquitto-clients
+# publisher
+vagrant@pub:~$ sudo apt install -y python# subscriber-pip
+vagrant@sub:~$ pip install paho-mqtt
+vagrant@sub:~$ sudo apt install -y mosquitto
+
+2. 명령어로 message 전송
+# subscriber
+vagrant@sub:~$ mosquitto_sub -h '192.168.56.11' -t 'test/temperature'
+# publisher
+vagrant@pub:~$ mosquitto_pub -h '192.168.56.11' -t 'test/temperature' -m '36.5'
+vagrant@pub:~$ mosquitto_pub -h '192.168.56.11' -t 'test/temperature' -m '37.0'
+vagrant@pub:~$ mosquitto_pub -h '192.168.56.11' -t 'test/temperature' -m '37.5' 
+---> message가 sub 터미널에 출력됨
+
+3. 파이썬으로 message 전송
+# sub.py, pub.py 코드 작성 후
+vagrant@sub:~$ python sub.py
+vagrant@pub:~$ python pub.py
+---> message가 sub 터미널에 출력됨
