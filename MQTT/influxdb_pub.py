@@ -22,7 +22,7 @@ client.on_publish = on_publish
 client.connect('192.168.56.22', 1883)
 client.loop_start()
 
-# 반복문을 통해 임시로 random한 temperature 데이터 생성
+# random한 temperature 데이터 생성
 while(True):
     dict1={'temperature':random.uniform(35,40)}
     json_test=json.dumps(dict1)
