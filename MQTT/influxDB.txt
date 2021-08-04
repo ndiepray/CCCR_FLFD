@@ -5,6 +5,7 @@ sudo dpkg -i influxdb_1.7.8_amd64.deb
 
 sudo systemctl enable --now influxdb
 sudo systemctl status influxdb
+sudo apt install -y python-influxdb
 
 2. influxDB 설정
 # /etc/influxdb/influxdb.conf 파일 수정
