@@ -1,12 +1,12 @@
 ## influxDB ##
-# 1. influxDB install
+1. influxDB install
 wget https://dl.influxdata.com/influxdb/releases/influxdb_1.7.8_amd64.deb
 dpkg -i influxdb_1.7.8_amd64.deb
 
 systemctl enable --now influxdb
 systemctl status influxdb
 
-# 2. influxDB 설정
+2. influxDB 설정
 # /etc/influxdb/influxdb.conf 파일 수정
 [http]
   # Determines whether HTTP endpoint is enabled.
@@ -18,7 +18,7 @@ systemctl status influxdb
   # Determines whether user authentication is enabled over HTTP/HTTPS.
   auth-enabled = false
   
-# 3. influxdb에 database 추가 후 데이터 검색
+3. influxdb에 database 추가 후 데이터 검색
 influx -precision rfc3339
 Connected to http://localhost:8086 version 1.4.2
 InfluxDB shell version: 1.4.2
