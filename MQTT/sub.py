@@ -14,6 +14,9 @@ def on_subscribe(client, userdata, mid, granted_qos):
 
 def on_message(client, userdata, msg):
     print(str(msg.payload.decode("utf-8")))
+    # json 파일에 데이터 저장
+    save_test=open('/home/vagrant/text.json','a+')
+    save_test.write('{"testMessage":'+ msg.payload.decode("utf-8")+"} ")
 
 # 새로운 클라이언트 생성
 client = mqtt.Client()
