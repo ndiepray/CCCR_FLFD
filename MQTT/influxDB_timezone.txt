@@ -1,5 +1,0 @@
-- 터미널에서 influx 접속하여 데이터 조회 시 time이 UnixTimestamp로 조회되는 현상
-  -> influx 접속 후 precision rfc3339 입력  
-  -> 또는, influxDB 접속할 때 influx -precision rfc3339 입력
-- timezone 안맞으면 tz('Asiz/seoul') 명령어 입력
-  -> SELECT * FROM test tz('Asia/Seoul')
