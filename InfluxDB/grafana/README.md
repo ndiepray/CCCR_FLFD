@@ -1,6 +1,8 @@
 Create Grafana Secret
 ```
-kubectl create -f secret.yaml
+kubectl create secret generic grafana-creds \
+--from-literal=GF_SECURITY_ADMIN_USER=admin \
+--from-literal=GF_SECURITY_ADMIN_PASSWORD=admin1234
 ```
 Create Grafana Deployment
 ```
