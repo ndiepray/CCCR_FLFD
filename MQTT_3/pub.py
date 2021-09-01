@@ -1,7 +1,6 @@
 import paho.mqtt.client as mqtt
 import json
 import time
-import random
 import Adafruit_DHT
 
 def on_connect(client, userdata, flags, rc):
@@ -23,10 +22,11 @@ client.on_publish = on_publish
 client.connect('172.30.1.5', 1883)
 client.loop_start()
 
+# Sensor: DH11 사용, GPIO Number : 4번
 sensor = Adafruit_DHT.DHT11
-# GPIO Number : 4
 pin = 4
 
+# 1초마다 temperature data, humidity data 출력
 try:
     while(True):
         # t: temperature, h:humidity
