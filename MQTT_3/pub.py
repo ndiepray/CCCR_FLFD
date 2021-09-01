@@ -35,7 +35,7 @@ try:
             dict1={'temperature':t}
             dict2={'humidity':h}
         else:
-            print('Read error')a
+            print('Read error')
         # json file create    
         json_test1=json.dumps(dict1)
         json_test2=json.dumps(dict2)
