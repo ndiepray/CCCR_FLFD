@@ -16,5 +16,5 @@ kubectl -f create deployment.yaml
 ```
 Expose deployment
 ```
-kubectl expose deployment influxdb --port=8086 --target-port=8086 --protocol=TCP --type=ClusterIP
+kubectl expose deployment influxdb --port=8086 --target-port=8086 --protocol=TCP --type=LoadBalancer
 ```
