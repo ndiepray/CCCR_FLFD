@@ -1,6 +1,6 @@
 Create Secret
 ```
-kubectl -f create secret.yaml
+kubectl create -f secret.yaml
 ```
 Create Config
 ```
@@ -8,7 +8,7 @@ kubectl create -f config.yaml
 ```
 Create Deployment
 ```
-kubectl -f create depolyment.yaml
+kubectl create -f depolyment.yaml
 ```
 Telegraf Service Use this if only statsd 8125 port is needed
 ```
