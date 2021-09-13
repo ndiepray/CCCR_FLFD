@@ -8,11 +8,11 @@ kubectl create secret generic influxdb-creds \
 ```
 Create Persistent Volume
 ```
-kubectl -f create pvc.yaml
+kubectl create -f pvc.yaml
 ```
 Create InfluxDB Deployment
 ```
-kubectl -f create deployment.yaml
+kubectl create -f deployment.yaml
 ```
 Expose deployment
 ```
