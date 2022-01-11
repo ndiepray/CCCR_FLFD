@@ -4,3 +4,5 @@
   - MQTT_3 : Raspberry Pi -> Edge Server -> Kubernetes DB Server
 - InfluxDB : DB 서버 구축 및 Telegraf, InfluxDB, Grafana 연동
 - Ingress_nginx : Web 서버 구축
+
+프로젝트 정리 : wiki 확인
